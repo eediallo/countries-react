@@ -3,7 +3,6 @@ import { useState } from "react";
 import { WorldCountries } from "./worldCountries";
 
 export const FilterCountries = () => {
-  
   let [searchTerm, setSeacthTerm] = useState("");
   let [filteredCountries, setFilteredCountries] = useState(countries);
 
@@ -23,6 +22,7 @@ export const FilterCountries = () => {
       <input
         value={searchTerm}
         type="text"
+        placeholder="Search for a country"
         name="search-for-country"
         id="search-for-country"
         onChange={handleOnInput}
