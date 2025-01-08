@@ -52,3 +52,9 @@ img{
   margin-left: 10px;
   width: 100%;
 }
+
+#search-for-country{
+  width: 500px;
+  padding: 10px;
+  margin-bottom: 30px;
+}
