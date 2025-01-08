@@ -17,12 +17,24 @@ body{
 }
 
 #root{
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.countries{
   display: flex;
   flex-wrap: wrap;
   gap: 50px;
-  max-width: 1440px;
   margin: 0 auto;
   justify-content: center;
+  width: 100%;
 }
 
 .country-card{
