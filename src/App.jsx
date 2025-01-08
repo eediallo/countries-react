@@ -1,11 +1,15 @@
 import { WorldCountries } from "../components/worldCountries";
 import { countries } from "./countries.jsx";
 import "./App.css";
+import { Header } from "../components/header.jsx";
 
 function App() {
   return (
     <>
-      <WorldCountries countries={countries} />
+      <Header />
+      <div className="countries">
+        <WorldCountries countries={countries} />
+      </div>
     </>
   );
 }
