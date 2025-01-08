@@ -1,8 +1,8 @@
 export const WorldCountries = ({ countries }) => {
   return countries.map((country) => {
     return (
-      <div key={countries.name} className="country-card">
-        <img src={country.flags.svg} alt="" />
+      <div key={country.name} className="country-card">
+        <img src={country.flags.svg} alt={country.name} />
         <div className="summary">
           <h1>{country.name}</h1>
           <p>
