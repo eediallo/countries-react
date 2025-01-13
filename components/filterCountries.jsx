@@ -1,8 +1,9 @@
-import { countries } from "../src/countries";
+// import { countries } from "../src/countries";
 import { useState } from "react";
 import { WorldCountries } from "./worldCountries";
+import PropTypes from "prop-types";
 
-export const FilterCountries = () => {
+export const FilterCountries = ({ countries }) => {
   let [searchTerm, setSeacthTerm] = useState("");
   let [filteredCountries, setFilteredCountries] = useState(countries);
 
@@ -32,4 +33,8 @@ export const FilterCountries = () => {
       </div>
     </>
   );
+};
+
+FilterCountries.propTypes = {
+  countries: PropTypes.array.isRequired,
 };
