@@ -49,7 +49,7 @@ export const FilterCountries = ({ countries }) => {
     <>
       <div className="search-region-filter-container">
         <div className="input-search-container input-wrapper">
-          <span className="material-symbols-outlined seach-icon">search</span>
+          <span className="material-symbols-outlined search-icon">search</span>
           <input
             value={searchTerm}
             type="text"
