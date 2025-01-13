@@ -6,7 +6,9 @@ import PropTypes from "prop-types";
 export const FilterCountries = ({ countries }) => {
   // input search filter
   let [searchTerm, setSeacthTerm] = useState("");
-  let [filteredCountries, setFilteredCountries] = useState(countries);
+  let [filteredCountries, setFilteredCountries] = useState(
+    countries.sort((a, b) => a.name.common.localeCompare(b.name.common))
+  );
 
   useEffect(() => {
     setFilteredCountries(countries);
