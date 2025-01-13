@@ -64,3 +64,15 @@ img{
   justify-content: space-between;
   align-items: center;
 }
+
+select{
+padding: 10px;
+border: none;
+border-radius: 5px;
+font-size: 16px;
+}
+
+option{
+  padding: 8px;
+  border: none;
+}
