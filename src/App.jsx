@@ -16,6 +16,8 @@ function App() {
       }
     }
     fetchCountriesData();
+
+    //clean up function
     return () => {
       isLoading = true;
     };
