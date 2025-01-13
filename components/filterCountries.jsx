@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { WorldCountries } from "./worldCountries";
 import PropTypes from "prop-types";
+import { RegionFiter } from "./filterByRegion";
 
 export const FilterCountries = ({ countries }) => {
   let [searchTerm, setSeacthTerm] = useState("");
@@ -28,6 +29,7 @@ export const FilterCountries = ({ countries }) => {
         id="search-for-country"
         onChange={handleOnInput}
       />
+      <RegionFiter />
       <div className="countries">
         <WorldCountries countries={filteredCountries} />
       </div>
