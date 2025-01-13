@@ -48,14 +48,17 @@ export const FilterCountries = ({ countries }) => {
   return (
     <>
       <div className="search-region-filter-container">
-        <input
-          value={searchTerm}
-          type="text"
-          placeholder="Search for a country"
-          name="search-for-country"
-          id="search-for-country"
-          onInput={handleOnInput}
-        />
+        <div className="input-search-container input-wrapper">
+          <span className="material-symbols-outlined seach-icon">search</span>
+          <input
+            value={searchTerm}
+            type="text"
+            placeholder="Search for a country"
+            name="search-for-country"
+            id="search-for-country"
+            onInput={handleOnInput}
+          />
+        </div>
         <div>
           <select
             value={filterBy}
