@@ -21,15 +21,17 @@ export const FilterCountries = ({ countries }) => {
 
   return (
     <>
-      <input
-        value={searchTerm}
-        type="text"
-        placeholder="Search for a country"
-        name="search-for-country"
-        id="search-for-country"
-        onChange={handleOnInput}
-      />
-      <RegionFiter />
+      <div className="search-region-filter-container">
+        <input
+          value={searchTerm}
+          type="text"
+          placeholder="Search for a country"
+          name="search-for-country"
+          id="search-for-country"
+          onChange={handleOnInput}
+        />
+        <RegionFiter />
+      </div>
       <div className="countries">
         <WorldCountries countries={filteredCountries} />
       </div>
