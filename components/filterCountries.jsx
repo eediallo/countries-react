@@ -2,9 +2,9 @@
 import { useState } from "react";
 import { WorldCountries } from "./worldCountries";
 import PropTypes from "prop-types";
-import { RegionFiter } from "./filterByRegion";
 
 export const FilterCountries = ({ countries }) => {
+  // input search filter
   let [searchTerm, setSeacthTerm] = useState("");
   let [filteredCountries, setFilteredCountries] = useState(countries);
 
@@ -19,6 +19,23 @@ export const FilterCountries = ({ countries }) => {
     setFilteredCountries(filtered);
   };
 
+  //drop down filter
+  let [filterBy, setFilterBy] = useState("Filter by Region");
+
+  function handleOnClcik(e) {
+    const filterByValue = e.target.value;
+    setFilterBy(filterByValue);
+    const filtered = countries.filter((country) => {
+      const countryText =
+        `${country.name} ${country.capital} ${country.region}`.toLocaleLowerCase();
+      return (
+        countryText.includes(searchTerm) &&
+        country.region.toLowerCase().includes(filterByValue.toLowerCase())
+      );
+    });
+    setFilteredCountries(filtered);
+  }
+
   return (
     <>
       <div className="search-region-filter-container">
@@ -28,9 +45,24 @@ export const FilterCountries = ({ countries }) => {
           placeholder="Search for a country"
           name="search-for-country"
           id="search-for-country"
-          onChange={handleOnInput}
+          onInput={handleOnInput}
         />
-        <RegionFiter />
+        <div>
+          <select
+            value={filterBy}
+            onChange={(e) => setFilterBy(e.target.value)}
+            onClick={handleOnClcik}
+            name="region-filter"
+            id="region-filter"
+          >
+            <option>Filter by Region</option>
+            <option>Africa</option>
+            <option>America</option>
+            <option>Asia</option>
+            <option>Europe</option>
+            <option>Oceania</option>
+          </select>
+        </div>
       </div>
       <div className="countries">
         <WorldCountries countries={filteredCountries} />
