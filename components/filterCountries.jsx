@@ -1,5 +1,5 @@
 // import { countries } from "../src/countries";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { WorldCountries } from "./worldCountries";
 import PropTypes from "prop-types";
 
@@ -8,12 +8,16 @@ export const FilterCountries = ({ countries }) => {
   let [searchTerm, setSeacthTerm] = useState("");
   let [filteredCountries, setFilteredCountries] = useState(countries);
 
+  useEffect(() => {
+    setFilteredCountries(countries);
+  }, [countries]);
+
   const handleOnInput = (e) => {
     const searchTerm = e.target.value.toLocaleLowerCase();
     setSeacthTerm(searchTerm);
     const filtered = countries.filter((country) => {
       const countryText =
-        `${country.name} ${country.capital}`.toLocaleLowerCase();
+        `${country.name.common} ${country.capital}`.toLocaleLowerCase();
       return countryText.includes(searchTerm);
     });
     setFilteredCountries(filtered);
