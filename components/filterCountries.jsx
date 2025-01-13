@@ -28,6 +28,9 @@ export const FilterCountries = ({ countries }) => {
     const filtered = countries.filter((country) => {
       const countryText =
         `${country.name} ${country.capital} ${country.region}`.toLocaleLowerCase();
+      if (filterByValue === "Filter by Region") {
+        return countries;
+      }
       return (
         countryText.includes(searchTerm) &&
         country.region.toLowerCase().includes(filterByValue.toLowerCase())
