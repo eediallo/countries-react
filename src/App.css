@@ -67,7 +67,7 @@ header {
 
 .country-card {
   width: 300px;
-  background-color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
+  background-color: var(--Very-Light-Gray-Light-Mode-Background);
   border-radius: 8px;
 }
 
