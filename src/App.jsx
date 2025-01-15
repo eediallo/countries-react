@@ -23,10 +23,10 @@ function App() {
     };
   }, []);
   return (
-    <>
+    <div className="App" data-theme="dark">
       <Header />
       <FilterCountries countries={countries} />
-    </>
+    </div>
   );
 }
 
