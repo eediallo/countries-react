@@ -1,33 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 
-*{
+* {
   box-sizing: border-box;
 }
-:root{
-  --Dark-Blue-Dark-Mode-Elements: hsl209, 23%, 22%;
-  --Very-Dark-Blue-Dark-Mode-Background: hsl(207,26%,17%);
-  --Very-Dark-Blue-Light-Mode-Text:hsl(200,15%,8%);
-  --Dark-Gray-Light-Mode-Input:hsl(0,-0%,-52%);
+
+:root {
+  --Dark-Blue-Dark-Mode-Elements: hsl(209, 23%, 22%);
+  --Very-Dark-Blue-Dark-Mode-Background: hsl(207, 26%, 17%);
+  --Very-Dark-Blue-Light-Mode-Text: hsl(200, 15%, 8%);
+  --Dark-Gray-Light-Mode-Input: hsl(0, 0%, 52%);
   --Very-Light-Gray-Light-Mode-Background: hsl(0, 0%, 98%);
   --White-Dark-Mode-Text-Light-Mode-Elements: hsl(0, 0%, 100%);
-
-  --primary-blue: rgb(0, 0, 255);
-  --secondary-blue: rgb(96, 96, 182);
-
-  --text-primary-light: black;
-  --text-primary-dark: white;
-
-  --text-secondary-light: rgb(70, 70, 70);
-  --text-secondary-dark: rgb(160, 160, 160);
-
-  --bg-primary-light: white;
-  --bg-primary-dark: black;
-
-  --bg-secondary-light: rgb(212, 212, 212);
-  --bg-secondary-dark: rgb(34, 34, 34);
-
-  --bg-navbar-light: rgb(104, 104, 255);
-  --bg-navbar-dark: rgb(29, 29, 58);
 }
 
 html, body {
@@ -48,24 +31,30 @@ html, body {
   font-variation-settings:
     "wdth" 100,
     "YTLC" 500;
+  color: var(--text-primary-light);
+  background-color: var(--bg-primary-light);
 }
-
 
 .App {
-width: 100%;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-header{
+header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   margin-bottom: 20px;
-  max-width: 1440px;
   width: 100%;
+  background-color: var(--Very-Light-Gray-Light-Mode-Background);
+}
+
+[data-theme="dark"] header {
+  background-color: var(--Very-Dark-Blue-Light-Mode-Text) ;
+  color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
 }
 
 .countries {
@@ -76,45 +65,48 @@ header{
   width: 100%;
 }
 
-.country-card{
+.country-card {
   width: 300px;
-  background-color:  hsl(0, 30%, 96%);
+  background-color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
   border-radius: 8px;
 }
 
-img{
+img {
   width: 100%;
 }
 
-.summary{
+.summary {
   margin-left: 10px;
   width: 100%;
 }
 
-#search-for-country{
+#search-for-country {
   width: 500px;
   padding: 10px 10px 10px 40px;
   margin-bottom: 30px;
 }
 
-.search-region-filter-container{
+.search-region-filter-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
-  max-width: 1440px;
 }
 
-select{
-padding: 10px;
-border: none;
-border-radius: 5px;
-font-size: 16px;
+[data-theme="dark"] .search-region-filter-container {
+  color: var(--White-Dark-Mode-Text-Light-Mode-Elements)
 }
 
-option{
+
+select {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+option {
   padding: 8px;
 }
-
 
 .search-icon {
   position: absolute;
@@ -127,4 +119,9 @@ option{
   position: relative;
   display: flex;
   align-items: center;
+}
+
+[data-theme="dark"] {
+  background-color: var( --Very-Dark-Blue-Dark-Mode-Background);
+  color: var(--text-primary-light);
 }
