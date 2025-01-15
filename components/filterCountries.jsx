@@ -1,4 +1,3 @@
-// import { countries } from "../src/countries";
 import { useEffect, useState } from "react";
 import { WorldCountries } from "./worldCountries";
 import PropTypes from "prop-types";
@@ -10,8 +9,11 @@ export const FilterCountries = ({ countries }) => {
     countries.sort((a, b) => a.name.common.localeCompare(b.name.common))
   );
 
+  let [numberOfCountriesDisplayed, setnumberOfCountriesDisplayed] = useState(0);
+
   useEffect(() => {
     setFilteredCountries(countries);
+    setnumberOfCountriesDisplayed(countries.length);
   }, [countries]);
 
   const handleOnInput = (e) => {
@@ -23,6 +25,7 @@ export const FilterCountries = ({ countries }) => {
       return countryText.includes(searchTerm);
     });
     setFilteredCountries(filtered);
+    setnumberOfCountriesDisplayed(filtered.length);
   };
 
   //drop down filter
@@ -35,7 +38,7 @@ export const FilterCountries = ({ countries }) => {
       const countryText =
         `${country.name} ${country.capital} ${country.region}`.toLocaleLowerCase();
       if (filterByValue === "Filter by Region") {
-        return countries;
+        return countryText.includes(searchTerm);
       }
       return (
         countryText.includes(searchTerm) &&
@@ -43,6 +46,7 @@ export const FilterCountries = ({ countries }) => {
       );
     });
     setFilteredCountries(filtered);
+    setnumberOfCountriesDisplayed(filtered.length);
   }
 
   return (
@@ -59,6 +63,9 @@ export const FilterCountries = ({ countries }) => {
             onInput={handleOnInput}
           />
         </div>
+        <p>
+          Displaying {numberOfCountriesDisplayed} / {countries.length} countries
+        </p>
         <div>
           <select
             value={filterBy}
