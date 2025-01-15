@@ -1,16 +1,16 @@
 import "./App.css";
 import { FilterCountries } from "../components/filterCountries.jsx";
 import { useState, useEffect } from "react";
+import darkMode from "../src/assets/dark_mode.svg";
+import lightMode from "../src/assets/light_mode.svg";
 
 function App() {
   const [countries, setCountries] = useState([]);
 
-  let [mode, setMode] = useState("Dark Mode");
   const [isDarkMode, setDarkMode] = useState(false);
 
-  function handleModeToggle() {
+  function ToggleMode() {
     setDarkMode(!isDarkMode);
-    setMode(isDarkMode ? "Dark Mode" : "Light Mode");
   }
   useEffect(() => {
     let isLoading = false;
@@ -32,8 +32,12 @@ function App() {
     <div className="App" data-theme={isDarkMode ? "dark" : "light"}>
       <header>
         <h1>Where in the world?</h1>
-        <div>
-          <p onClick={handleModeToggle}>{mode}</p>
+        <div onClick={ToggleMode} className="theme-container">
+          {!isDarkMode ? (
+            <img src={darkMode} alt="dark mode" />
+          ) : (
+            <img src={lightMode} alt="light mode" />
+          )}
         </div>
       </header>
       <FilterCountries countries={countries} />
