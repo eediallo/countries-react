@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { WorldCountries } from "./worldCountries";
+import { Countries } from "./Countries";
 import PropTypes from "prop-types";
 
 export const FilterCountries = ({ countries }) => {
@@ -84,7 +84,7 @@ export const FilterCountries = ({ countries }) => {
         </div>
       </div>
       <div className="countries">
-        <WorldCountries countries={filteredCountries} />
+        <Countries countries={filteredCountries} />
       </div>
     </>
   );
