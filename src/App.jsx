@@ -1,5 +1,5 @@
 import "./App.css";
-import { FilterCountries } from "../components/filterCountries.jsx";
+import { FilterCountries } from "./components/filterCountries.jsx";
 import { useState, useEffect } from "react";
 import darkMode from "../src/assets/dark_mode.svg";
 import lightMode from "../src/assets/light_mode.svg";
