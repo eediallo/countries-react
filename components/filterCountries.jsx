@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { Countries } from "./Countries";
 import PropTypes from "prop-types";
+import SearchBar from "./SearchBar";
+import NumberOfCountriesDisplayed from "./NumberDisplayed";
 
 export const FilterCountries = ({ countries }) => {
   // input search filter
-  let [searchTerm, setSeacthTerm] = useState("");
+  let [searchTerm, setSearchTerm] = useState("");
   let [filteredCountries, setFilteredCountries] = useState(
     countries.sort((a, b) => a.name.common.localeCompare(b.name.common))
   );
@@ -15,18 +17,6 @@ export const FilterCountries = ({ countries }) => {
     setFilteredCountries(countries);
     setnumberOfCountriesDisplayed(countries.length);
   }, [countries]);
-
-  const handleOnInput = (e) => {
-    const searchTerm = e.target.value.toLocaleLowerCase();
-    setSeacthTerm(searchTerm);
-    const filtered = countries.filter((country) => {
-      const countryText =
-        `${country.name.common} ${country.capital}`.toLocaleLowerCase();
-      return countryText.includes(searchTerm);
-    });
-    setFilteredCountries(filtered);
-    setnumberOfCountriesDisplayed(filtered.length);
-  };
 
   //drop down filter
   let [filterBy, setFilterBy] = useState("Filter by Region");
@@ -52,20 +42,17 @@ export const FilterCountries = ({ countries }) => {
   return (
     <>
       <div className="search-region-filter-container">
-        <div className="input-search-container input-wrapper">
-          <span className="material-symbols-outlined search-icon">search</span>
-          <input
-            value={searchTerm}
-            type="text"
-            placeholder="Search for a country"
-            name="search-for-country"
-            id="search-for-country"
-            onInput={handleOnInput}
-          />
-        </div>
-        <p>
-          Displaying {numberOfCountriesDisplayed} / {countries.length} countries
-        </p>
+        <SearchBar
+          countries={countries}
+          setSearchTerm={setSearchTerm}
+          setFilteredCountries={setFilteredCountries}
+          setnumberOfCountriesDisplayed={setnumberOfCountriesDisplayed}
+          searchTerm={searchTerm}
+        />
+        <NumberOfCountriesDisplayed
+          numberOfCountriesDisplayed={numberOfCountriesDisplayed}
+          countries={countries}
+        />
         <div>
           <select
             value={filterBy}
