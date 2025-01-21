@@ -3,6 +3,7 @@ import { Countries } from "./Countries";
 import PropTypes from "prop-types";
 import SearchBar from "./SearchBar";
 import NumberOfCountriesDisplayed from "./NumberDisplayed";
+import Regions from "./Regions";
 
 export const FilterCountries = ({ countries }) => {
   // input search filter
@@ -21,24 +22,6 @@ export const FilterCountries = ({ countries }) => {
   //drop down filter
   let [filterBy, setFilterBy] = useState("Filter by Region");
 
-  function handleOnClcik(e) {
-    const filterByValue = e.target.value;
-    setFilterBy(filterByValue);
-    const filtered = countries.filter((country) => {
-      const countryText =
-        `${country.name} ${country.capital} ${country.region}`.toLocaleLowerCase();
-      if (filterByValue === "Filter by Region") {
-        return countryText.includes(searchTerm);
-      }
-      return (
-        countryText.includes(searchTerm) &&
-        country.region.toLowerCase().includes(filterByValue.toLowerCase())
-      );
-    });
-    setFilteredCountries(filtered);
-    setnumberOfCountriesDisplayed(filtered.length);
-  }
-
   return (
     <>
       <div className="search-region-filter-container">
@@ -53,22 +36,14 @@ export const FilterCountries = ({ countries }) => {
           numberOfCountriesDisplayed={numberOfCountriesDisplayed}
           countries={countries}
         />
-        <div>
-          <select
-            value={filterBy}
-            onChange={(e) => setFilterBy(e.target.value)}
-            onClick={handleOnClcik}
-            name="region-filter"
-            id="region-filter"
-          >
-            <option>Filter by Region</option>
-            <option>Africa</option>
-            <option>America</option>
-            <option>Asia</option>
-            <option>Europe</option>
-            <option>Oceania</option>
-          </select>
-        </div>
+        <Regions
+          filterBy={filterBy}
+          setFilterBy={setFilterBy}
+          setFilteredCountries={setFilteredCountries}
+          searchTerm={searchTerm}
+          countries={countries}
+          setnumberOfCountriesDisplayed={setnumberOfCountriesDisplayed}
+        />
       </div>
       <div className="countries">
         <Countries countries={filteredCountries} />
