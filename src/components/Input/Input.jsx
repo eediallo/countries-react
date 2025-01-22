@@ -1,9 +1,13 @@
 import PropTypes from "prop-types";
 import "./Input.css";
+import Section from "../Section";
 
 export default function Input({ searchTerm, onSelect }) {
   return (
-    <div className="input-search-container input-wrapper">
+    <Section
+      className="input-search-container input-wrapper"
+      sectionContainer="section"
+    >
       <span className="material-symbols-outlined search-icon">search</span>
       <input
         value={searchTerm}
@@ -13,7 +17,7 @@ export default function Input({ searchTerm, onSelect }) {
         id="search-for-country"
         onInput={onSelect}
       />
-    </div>
+    </Section>
   );
 }
 
