@@ -1,4 +1,9 @@
 import PropTypes from "prop-types";
+import "./SearchBar.css";
+import Section from "../Section";
+import Regions from "../Regions";
+import NumberOfCountriesDisplayed from "../NumberDisplayed";
+import Input from "../Input/Input";
 
 export default function SearchBar({
   setSearchTerm,
@@ -6,6 +11,9 @@ export default function SearchBar({
   setFilteredCountries,
   setnumberOfCountriesDisplayed,
   searchTerm,
+  filterBy,
+  setFilterBy,
+  numberOfCountriesDisplayed,
 }) {
   const handleOnInput = (e) => {
     const searchTerm = e.target.value.toLocaleLowerCase();
@@ -20,17 +28,25 @@ export default function SearchBar({
   };
 
   return (
-    <div className="input-search-container input-wrapper">
-      <span className="material-symbols-outlined search-icon">search</span>
-      <input
-        value={searchTerm}
-        type="text"
-        placeholder="Search for a country"
-        name="search-for-country"
-        id="search-for-country"
-        onInput={handleOnInput}
+    <Section
+      className="search-region-filter-container"
+      sectionContainer="section"
+    >
+      <Input searchTerm={searchTerm} onSelect={handleOnInput} />
+
+      <NumberOfCountriesDisplayed
+        numberOfCountriesDisplayed={numberOfCountriesDisplayed}
+        countries={countries}
       />
-    </div>
+      <Regions
+        filterBy={filterBy}
+        setFilterBy={setFilterBy}
+        setFilteredCountries={setFilteredCountries}
+        searchTerm={searchTerm}
+        countries={countries}
+        setnumberOfCountriesDisplayed={setnumberOfCountriesDisplayed}
+      />
+    </Section>
   );
 }
 
