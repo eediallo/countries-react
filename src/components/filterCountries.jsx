@@ -10,16 +10,14 @@ export const FilterCountries = ({ countries }) => {
     countries.sort((a, b) => a.name.common.localeCompare(b.name.common))
   );
 
-  
   let [numberOfCountriesDisplayed, setnumberOfCountriesDisplayed] = useState(0);
-  
+
   useEffect(() => {
     setFilteredCountries(countries);
     setnumberOfCountriesDisplayed(countries.length);
   }, [countries]);
   let [filterBy, setFilterBy] = useState("Filter by Region");
-  
-  
+
   return (
     <>
       <SearchBar
