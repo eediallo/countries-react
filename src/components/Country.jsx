@@ -9,7 +9,7 @@ export default function Country({
   capital,
 }) {
   return (
-    <div className="country-card" key={cca3}>
+    <section className="country-card" key={cca3}>
       <img src={flags.svg} alt={name.common} />
       <div className="summary">
         <h1>{name.common}</h1>
@@ -26,7 +26,7 @@ export default function Country({
           {capital}
         </p>
       </div>
-    </div>
+    </section>
   );
 }
 
