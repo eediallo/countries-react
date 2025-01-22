@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import SearchBar from "./SearchBar";
 import NumberOfCountriesDisplayed from "./NumberDisplayed";
 import Regions from "./Regions";
+import Section from "./Section";
 
 export const FilterCountries = ({ countries }) => {
   // input search filter
@@ -24,7 +25,10 @@ export const FilterCountries = ({ countries }) => {
 
   return (
     <>
-      <section className="search-region-filter-container">
+      <Section
+        className="search-region-filter-container"
+        sectionContainer="section"
+      >
         <SearchBar
           countries={countries}
           setSearchTerm={setSearchTerm}
@@ -44,7 +48,7 @@ export const FilterCountries = ({ countries }) => {
           countries={countries}
           setnumberOfCountriesDisplayed={setnumberOfCountriesDisplayed}
         />
-      </section>
+      </Section>
       <Countries countries={filteredCountries} />
     </>
   );
