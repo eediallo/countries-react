@@ -3,7 +3,7 @@ import { Countries } from "./Countries";
 import PropTypes from "prop-types";
 import SearchBar from "./SearchBar/SearchBar";
 
-export const FilterCountries = ({ countries }) => {
+export const FilteredCountries = ({ countries }) => {
   // input search filter
   let [searchTerm, setSearchTerm] = useState("");
   let [filteredCountries, setFilteredCountries] = useState(
@@ -36,6 +36,6 @@ export const FilterCountries = ({ countries }) => {
   );
 };
 
-FilterCountries.propTypes = {
+FilteredCountries.propTypes = {
   countries: PropTypes.array.isRequired,
 };

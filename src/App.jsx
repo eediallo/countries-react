@@ -1,5 +1,5 @@
 import "./App.css";
-import { FilterCountries } from "./components/filterCountries.jsx";
+import { FilteredCountries } from "./components/filterCountries.jsx";
 import { useState, useEffect } from "react";
 import Section from "./components/Section.jsx";
 import Header from "./components/Header/Header.jsx";
@@ -36,7 +36,7 @@ function App() {
       sectionContainer="div"
     >
       <Header onSelect={ToggleMode} isDarkMode={isDarkMode} />
-      <FilterCountries countries={countries} />
+      <FilteredCountries countries={countries} />
     </Section>
   );
 }
