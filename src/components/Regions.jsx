@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import Options from "./Options";
 
 export default function Regions({
   filterBy,
@@ -35,12 +36,7 @@ export default function Regions({
         name="region-filter"
         id="region-filter"
       >
-        <option>Filter by Region</option>
-        <option>Africa</option>
-        <option>America</option>
-        <option>Asia</option>
-        <option>Europe</option>
-        <option>Oceania</option>
+        <Options />
       </select>
     </div>
   );
