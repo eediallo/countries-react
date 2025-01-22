@@ -1,4 +1,4 @@
-import Country from "./Country";
+import Country from "./Country/Country";
 import Section from "./Section";
 
 export const Countries = ({ countries }) => {

@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
-import Section from "./Section";
+import Section from "../Section";
+import "./Country.css";
 
 export default function Country({
   flags,

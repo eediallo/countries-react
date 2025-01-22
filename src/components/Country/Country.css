@@ -1,0 +1,14 @@
+.country-card {
+  width: 300px;
+  background-color: var(--Very-Light-Gray-Light-Mode-Background);
+  border-radius: 8px;
+}
+
+img {
+  width: 100%;
+}
+
+.summary {
+  margin-left: 10px;
+  width: 100%;
+}
