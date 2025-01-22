@@ -1,0 +1,16 @@
+.search-region-filter-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+select {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+option {
+  padding: 8px;
+}
