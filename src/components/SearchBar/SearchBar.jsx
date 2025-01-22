@@ -56,4 +56,7 @@ SearchBar.propTypes = {
   setFilteredCountries: PropTypes.func.isRequired,
   setnumberOfCountriesDisplayed: PropTypes.func.isRequired,
   searchTerm: PropTypes.string.isRequired,
+  filterBy: PropTypes.string.isRequired,
+  setFilterBy: PropTypes.func.isRequired,
+  numberOfCountriesDisplayed: PropTypes.number,
 };
