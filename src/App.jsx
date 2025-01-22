@@ -3,6 +3,7 @@ import { FilterCountries } from "./components/filterCountries.jsx";
 import { useState, useEffect } from "react";
 import darkMode from "../src/assets/dark_mode.svg";
 import lightMode from "../src/assets/light_mode.svg";
+import Section from "./components/Section.jsx";
 
 function App() {
   const [countries, setCountries] = useState([]);
@@ -29,7 +30,11 @@ function App() {
     };
   }, []);
   return (
-    <div className="App" data-theme={isDarkMode ? "dark" : "light"}>
+    <Section
+      className="App"
+      data-theme={isDarkMode ? "dark" : "light"}
+      sectionContainer="div"
+    >
       <header>
         <h1>Where in the world?</h1>
         <div onClick={ToggleMode} className="theme-container">
@@ -41,7 +46,7 @@ function App() {
         </div>
       </header>
       <FilterCountries countries={countries} />
-    </div>
+    </Section>
   );
 }
 
