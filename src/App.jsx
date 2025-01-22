@@ -1,5 +1,5 @@
 import "./App.css";
-import { FilteredCountries } from "./components/filterCountries.jsx";
+import { FilteredCountries } from "./components/FilteredCountries.jsx";
 import { useState, useEffect } from "react";
 import Section from "./components/Section.jsx";
 import Header from "./components/Header/Header.jsx";
