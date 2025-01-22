@@ -15,7 +15,7 @@ export default function SearchBar({
   setFilterBy,
   numberOfCountriesDisplayed,
 }) {
-  const handleOnInput = (e) => {
+  const handleInput = (e) => {
     const searchTerm = e.target.value.toLocaleLowerCase();
     setSearchTerm(searchTerm);
     const filtered = countries.filter((country) => {
@@ -32,7 +32,7 @@ export default function SearchBar({
       className="search-region-filter-container"
       sectionContainer="section"
     >
-      <Input searchTerm={searchTerm} onSelect={handleOnInput} />
+      <Input searchTerm={searchTerm} onSelect={handleInput} />
 
       <NumberOfCountriesDisplayed
         numberOfCountriesDisplayed={numberOfCountriesDisplayed}
