@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import Section from "./Section";
 
 export default function Country({
   flags,
@@ -9,7 +10,7 @@ export default function Country({
   capital,
 }) {
   return (
-    <section className="country-card" key={cca3}>
+    <Section className="country-card" key={cca3} sectionContainer="section">
       <img src={flags.svg} alt={name.common} />
       <div className="summary">
         <h1>{name.common}</h1>
@@ -26,7 +27,7 @@ export default function Country({
           {capital}
         </p>
       </div>
-    </section>
+    </Section>
   );
 }
 
