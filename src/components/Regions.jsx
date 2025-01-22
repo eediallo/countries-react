@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import Options from "./Options";
+import Section from "./Section";
 
 export default function Regions({
   filterBy,
@@ -28,7 +29,7 @@ export default function Regions({
   }
 
   return (
-    <section>
+    <Section sectionContainer="div">
       <select
         value={filterBy}
         onChange={(e) => setFilterBy(e.target.value)}
@@ -38,7 +39,7 @@ export default function Regions({
       >
         <Options />
       </select>
-    </section>
+    </Section>
   );
 }
 
