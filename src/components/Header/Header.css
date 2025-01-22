@@ -1,0 +1,13 @@
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+  background-color: var(--Very-Light-Gray-Light-Mode-Background);
+}
+
+[data-theme="dark"] header {
+  background-color: var(--Very-Dark-Blue-Light-Mode-Text);
+  color: var(--White-Dark-Mode-Text-Light-Mode-Elements);
+}

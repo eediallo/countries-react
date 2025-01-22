@@ -1,6 +1,7 @@
-import lightMode from "../../src/assets/light_mode.svg";
-import darkMode from "../../src/assets/dark_mode.svg";
+import lightMode from "../../../src/assets/light_mode.svg";
+import darkMode from "../../../src/assets/dark_mode.svg";
 import PropTypes from "prop-types";
+import "./Header.css";
 
 export default function Header({ onSelect, isDarkMode }) {
   return (
