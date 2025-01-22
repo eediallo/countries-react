@@ -36,5 +36,5 @@ Country.propTypes = {
   cca3: PropTypes.string.isRequired,
   population: PropTypes.number.isRequired,
   region: PropTypes.string.isRequired,
-  capital: PropTypes.string.isRequired,
+  capital: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
 };
