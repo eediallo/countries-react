@@ -1,7 +1,11 @@
 import Country from "./Country";
 
 export const Countries = ({ countries }) => {
-  return countries.map((country) => (
-    <Country key={country.cca3} {...country} />
-  ));
+  return (
+    <section className="countries">
+      {countries.map((coutry) => (
+        <Country key={coutry.cca3} {...coutry} />
+      ))}
+    </section>
+  );
 };
