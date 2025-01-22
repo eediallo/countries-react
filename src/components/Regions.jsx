@@ -28,7 +28,7 @@ export default function Regions({
   }
 
   return (
-    <div>
+    <section>
       <select
         value={filterBy}
         onChange={(e) => setFilterBy(e.target.value)}
@@ -38,7 +38,7 @@ export default function Regions({
       >
         <Options />
       </select>
-    </div>
+    </section>
   );
 }
 
