@@ -24,7 +24,7 @@ export const FilterCountries = ({ countries }) => {
 
   return (
     <>
-      <div className="search-region-filter-container">
+      <section className="search-region-filter-container">
         <SearchBar
           countries={countries}
           setSearchTerm={setSearchTerm}
@@ -44,10 +44,8 @@ export const FilterCountries = ({ countries }) => {
           countries={countries}
           setnumberOfCountriesDisplayed={setnumberOfCountriesDisplayed}
         />
-      </div>
-      <div className="countries">
-        <Countries countries={filteredCountries} />
-      </div>
+      </section>
+      <Countries countries={filteredCountries} />
     </>
   );
 };
