@@ -14,3 +14,12 @@ select {
 option {
   padding: 8px;
 }
+
+@media screen and (max-width: 768px) {
+  .search-region-filter-container {
+    display: block;
+    width: 90%;
+    text-align: center;
+  margin-bottom: 20px;
+  }
+}

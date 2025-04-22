@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
 
 * {
   box-sizing: border-box;
@@ -11,9 +11,14 @@
   --Dark-Gray-Light-Mode-Input: hsl(0, 0%, 52%);
   --Very-Light-Gray-Light-Mode-Background: hsl(0, 0%, 98%);
   --White-Dark-Mode-Text-Light-Mode-Elements: hsl(0, 0%, 100%);
+  --text-primary-light: var(--Very-Dark-Blue-Light-Mode-Text);
+  --bg-primary-light: var(--Very-Light-Gray-Light-Mode-Background);
+  --text-primary-dark: var(--White-Dark-Mode-Text-Light-Mode-Elements);
+  --bg-primary-dark: var(--Very-Dark-Blue-Dark-Mode-Background);
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -28,9 +33,7 @@ html, body {
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
-  font-variation-settings:
-    "wdth" 100,
-    "YTLC" 500;
+  font-variation-settings: "wdth" 100, "YTLC" 500;
   color: var(--text-primary-light);
   background-color: var(--bg-primary-light);
 }
@@ -43,8 +46,6 @@ html, body {
   align-items: center;
 }
 
-
-
 .countries {
   display: flex;
   flex-wrap: wrap;
@@ -54,11 +55,38 @@ html, body {
 }
 
 [data-theme="dark"] .search-region-filter-container {
-  color: var(--White-Dark-Mode-Text-Light-Mode-Elements)
+  color: var(--text-primary-dark);
 }
 
-
 [data-theme="dark"] {
-  background-color: var( --Very-Dark-Blue-Dark-Mode-Background);
-  color: var(--text-primary-light);
+  background-color: var(--bg-primary-dark);
+  color: var(--text-primary-dark);
+}
+
+[data-theme="dark"] .country-card {
+  background-color: black;
+}
+
+[data-theme="light"] .country-card {
+  background-color: rgb(245, 238, 238);
+}
+
+[data-theme="light"] header {
+  background-color: rgb(245, 238, 238);
+}
+
+[data-theme="light"] input {
+  background-color: rgb(245, 238, 238);
+  border: none;
+}
+
+[data-theme="dark"] input {
+  background-color: black;
+  border: none;
+}
+
+[data-theme="light"] select {
+  background-color: rgb(245, 238, 238);
+  color: black;
+  border: none;
 }
