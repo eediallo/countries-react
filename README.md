@@ -1,6 +1,8 @@
 # World Countries
 
-This is a React-based project that displays information about countries. It allows users to filter and search for countries based on various criteria, such as region and name.
+## Description
+
+This project is a React-based application that displays information about countries. It allows users to filter and search for countries based on various criteria, such as region and name. The application fetches country data from the [REST Countries API](https://restcountries.com/v3.1/all), which provides detailed information about countries, including their names, regions, flags, and more.
 
 ## Features
 
@@ -56,10 +58,6 @@ yarn build
 ```
 
 The production-ready files will be in the `dist/` directory.
-
-## API Usage
-
-This project uses the [REST Countries API](https://restcountries.com/v3.1/all) to fetch data about countries. The API provides detailed information about countries, including their names, regions, flags, and more.
 
 ## License
 
